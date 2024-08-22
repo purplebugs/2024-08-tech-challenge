@@ -14,13 +14,11 @@ export default function handler(req, res) {
   const id = parseInt("1234", 10);
 
   if (req.method === "POST") {
-    // TODO get account_id, amount from form
-
     const transaction_id = uuid();
     const response = {
       transaction_id: transaction_id,
-      account_id: "0afd02d3-6c59-46e7-b7bc-893c5e0b7ac2",
-      amount: 7,
+      account_id: body.account_id,
+      amount: body.amount,
       created_at: new Date().toString(), // TODO proper date handling using some library
     };
 

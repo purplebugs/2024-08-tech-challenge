@@ -5,5 +5,9 @@ export default function handler(req, res) {
 
   const response = db.get(id);
 
-  res.status(200).json(response);
+  if (response === undefined) {
+    res.status(404).json({ message: "Not found.", code: 404 });
+  } else {
+    res.status(200).json(response);
+  }
 }
