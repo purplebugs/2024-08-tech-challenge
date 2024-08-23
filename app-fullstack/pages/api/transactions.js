@@ -24,4 +24,13 @@ export default function handler(req, res) {
 
     res.status(201).json(response);
   }
+
+  if (method === "GET") {
+    let list = [];
+    globalThis.dbTransactions.forEach((value) => {
+      list.unshift(value); // Newest values first by default
+    });
+
+    res.status(200).json(list);
+  }
 }

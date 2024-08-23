@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Tile from "../components/Tile";
 import Form from "../components/Form";
+import TransactionList from "../components/TransactionList";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <Tile />
         <Form />
+        <TransactionList />
       </main>
       <Footer />
     </div>
