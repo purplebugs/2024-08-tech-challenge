@@ -18,16 +18,22 @@ async function onSubmit(event) {
   document.getElementById("transactionForm").reset();
 
   // Handle response if necessary
-  const data = await response.json();
-  console.log("data", data);
+  //   const data = await response.json();
+  //   console.log("data", data);
   // ...
 }
 
-const Form = () => (
+const Form = ({ setTransactions, fetchTransactions }) => (
   <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
     <div className="p-6 mt-6 text-left border w-96 rounded-xl">
       <h3 className="text-2xl font-bold ">Submit new transaction</h3>
-      <form id="transactionForm" onSubmit={onSubmit}>
+      <form
+        id="transactionForm"
+        onSubmit={async (event) => {
+          await onSubmit(event);
+          setTransactions(fetchTransactions);
+        }}
+      >
         <label htmlFor="account_id">Account id:</label>
         <input
           required
