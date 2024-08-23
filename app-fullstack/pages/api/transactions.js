@@ -11,9 +11,7 @@ function uuid() {
 export default function handler(req, res) {
   const { body, method } = req;
 
-  const id = parseInt("1234", 10);
-
-  if (req.method === "POST") {
+  if (method === "POST") {
     const transaction_id = uuid();
     const response = {
       transaction_id: transaction_id,
@@ -25,5 +23,14 @@ export default function handler(req, res) {
     globalThis.dbTransactions.set(transaction_id, response);
 
     res.status(201).json(response);
+  }
+
+  if (method === "GET") {
+    let list = [];
+    globalThis.dbTransactions.forEach((value) => {
+      list.unshift(value); // Newest values first by default
+    });
+
+    res.status(200).json(list);
   }
 }
