@@ -1,4 +1,4 @@
-import db from "../../db/db.js";
+import "../../db/db.js";
 
 function uuid() {
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
@@ -18,11 +18,12 @@ export default function handler(req, res) {
     const response = {
       transaction_id: transaction_id,
       account_id: body.account_id,
-      amount: body.amount,
+      amount: parseInt(body.amount),
       created_at: new Date().toString(), // TODO proper date handling using some library
     };
 
-    db.set(transaction_id, response);
+    globalThis.dbTransactions.set(transaction_id, response);
+
     res.status(201).json(response);
   }
 }
