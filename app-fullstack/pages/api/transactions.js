@@ -11,9 +11,11 @@ function uuid() {
 export default function handler(req, res) {
   const { body, method } = req;
 
-  const id = parseInt("1234", 10);
+  console.log("body", body);
+  console.log("body.account_id", body.account_id);
+  console.log("body.amount", body.amount);
 
-  if (req.method === "POST") {
+  if (method === "POST") {
     const transaction_id = uuid();
     const response = {
       transaction_id: transaction_id,

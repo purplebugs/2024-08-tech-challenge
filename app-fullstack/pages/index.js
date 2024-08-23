@@ -1,7 +1,8 @@
-import Head from 'next/head'
+import Head from "next/head";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Tile from "../components/Tile";
+import Form from "../components/Form";
 
 export default function Home() {
   return (
@@ -14,8 +15,9 @@ export default function Home() {
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
         <Hero />
         <Tile />
+        <Form />
       </main>
       <Footer />
     </div>
-  )
+  );
 }
