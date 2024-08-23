@@ -8,6 +8,7 @@ import TransactionList from "../components/TransactionList";
 import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [balance, setBalance] = useState(0);
   const [transactions, setTransactions] = useState(0);
   const [isLoading, setLoading] = useState(true);
 
@@ -15,6 +16,14 @@ export default function Home() {
     fetch("/api/transactions")
       .then((res) => res.json())
       .then((data) => {
+        const latestAccountId = data[0]?.account_id;
+
+        fetch(`/api/accounts/${latestAccountId}`)
+          .then((res) => res.json())
+          .then((dat) => {
+            setBalance(dat.balance);
+          });
+
         setTransactions(data);
         setLoading(false);
       });
@@ -39,7 +48,12 @@ export default function Home() {
           setTransactions={setTransactions}
           setLoading={setLoading}
         />
-        <TransactionList data={transactions} isLoading={false} />
+
+        <TransactionList
+          data={transactions}
+          balance={balance}
+          isLoading={isLoading}
+        />
       </main>
       <Footer />
     </div>
