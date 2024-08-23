@@ -3,12 +3,15 @@ async function onSubmit(event) {
 
   const formData = new FormData(event.target);
 
-  console.log("account_id", formData.get("account_id"));
-  console.log("amount", formData.get("amount"));
-
   const response = await fetch("/api/transactions", {
     method: "POST",
-    body: formData,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      account_id: formData.get("account_id"),
+      amount: formData.get("amount"),
+    }),
   });
 
   // Both input fields should be cleared after the form is submitted.
