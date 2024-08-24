@@ -34,25 +34,40 @@ const Form = ({ setTransactions, fetchTransactions }) => (
           setTransactions(fetchTransactions);
         }}
       >
-        <label htmlFor="account_id">Account id:</label>
-        <input
-          required
-          data-type="account-id"
-          type="text"
-          id="account_id"
-          name="account_id"
-        />
+        <fieldset>
+          <label htmlFor="account_id" className="block">
+            Account id:
+          </label>
+          <input
+            required
+            data-type="account-id"
+            type="text"
+            id="account_id"
+            name="account_id"
+            class="border rounded-xl border-2 border-purple-500 my-5 w-full"
+          />
+        </fieldset>
 
-        <label htmlFor="amount">Amount:</label>
-        <input
-          required
-          data-type="amount"
-          type="text"
-          id="amount"
-          name="amount"
-        />
+        <fieldset>
+          <label htmlFor="amount" className="block">
+            Amount:
+          </label>
+          <input
+            required
+            data-type="amount"
+            type="text"
+            id="amount"
+            name="amount"
+            class="border rounded-xl border-2 border-purple-500 my-5 w-full"
+          />
+        </fieldset>
 
-        <input data-type="transaction-submit" type="submit" value="Submit" />
+        <input
+          data-type="transaction-submit"
+          type="submit"
+          value="Submit"
+          class="border rounded-xl border-2 border-purple-500 my-5 w-full"
+        />
       </form>
     </div>
   </section>
