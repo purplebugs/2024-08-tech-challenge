@@ -71,6 +71,23 @@ const Form = ({ setTransactions, fetchTransactions }) => (
           className="border rounded-xl border-2 border-purple-500 my-5 w-full"
         />
       </form>
+
+      <div className="my-10">
+        Example valid account ids:
+        <ul className="list-disc">
+          <li>89fd4cb4-2b49-4c92-b3d7-1cfaee1a2ac3</li>
+          <li>9c5dac6c-f4cd-4af8-aeee-027f3f775026</li>
+          <li>39e210d7-c11b-45d3-a5ef-2af3a88590a1</li>
+        </ul>
+      </div>
+
+      <div className="my-10">
+        Example valid amounts:
+        <ul className="list-disc">
+          <li>55</li>
+          <li>-17</li>
+        </ul>
+      </div>
     </div>
   </section>
 );
