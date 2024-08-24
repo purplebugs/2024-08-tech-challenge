@@ -55,7 +55,7 @@ const Form = ({ setTransactions, fetchTransactions }) => (
           </label>
           <input
             required
-            pattern="^[[:digit:]]$"
+            pattern="^\-?[[:digit:]]$"
             data-type="amount"
             type="text"
             id="amount"
