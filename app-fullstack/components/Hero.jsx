@@ -1,19 +1,9 @@
 const Hero = () => (
-  <>
-    <h1 className="text-6xl font-bold">
-      Fullstack Boilerplate React with <br />
-      <a className="text-indigo-600" href="https://nextjs.org">
-        NextJS, TailwindCSS
-      </a>
-    </h1>
+  <header className="my-8">
+    <h1 className="text-6xl font-bold">Obos payment transactions</h1>
 
-    <p className="mt-3 text-2xl">
-      Get started by editing{' '}
-      <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-        app-frontend/pages/index.js
-      </code>
-    </p>
-  </>
-)
+    <p className="mt-3 text-2xl">by Anita Lipsky</p>
+  </header>
+);
 
 export default Hero;

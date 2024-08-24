@@ -24,9 +24,9 @@ async function onSubmit(event) {
 }
 
 const Form = ({ setTransactions, fetchTransactions }) => (
-  <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-    <div className="p-6 mt-6 text-left border w-96 rounded-xl">
-      <h3 className="text-2xl font-bold ">Submit new transaction</h3>
+  <section>
+    <h3 className="text-2xl font-bold text-left">Submit new transaction</h3>
+    <div className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-indigo-600 focus:text-indigo-600">
       <form
         id="transactionForm"
         onSubmit={async (event) => {
@@ -34,28 +34,43 @@ const Form = ({ setTransactions, fetchTransactions }) => (
           setTransactions(fetchTransactions);
         }}
       >
-        <label htmlFor="account_id">Account id:</label>
-        <input
-          required
-          data-type="account-id"
-          type="text"
-          id="account_id"
-          name="account_id"
-        />
+        <fieldset>
+          <label htmlFor="account_id" className="block">
+            Account id:
+          </label>
+          <input
+            required
+            data-type="account-id"
+            type="text"
+            id="account_id"
+            name="account_id"
+            class="border rounded-xl border-2 border-purple-500 my-5 w-full"
+          />
+        </fieldset>
 
-        <label htmlFor="amount">Amount:</label>
-        <input
-          required
-          data-type="amount"
-          type="text"
-          id="amount"
-          name="amount"
-        />
+        <fieldset>
+          <label htmlFor="amount" className="block">
+            Amount:
+          </label>
+          <input
+            required
+            data-type="amount"
+            type="text"
+            id="amount"
+            name="amount"
+            class="border rounded-xl border-2 border-purple-500 my-5 w-full"
+          />
+        </fieldset>
 
-        <input data-type="transaction-submit" type="submit" value="Submit" />
+        <input
+          data-type="transaction-submit"
+          type="submit"
+          value="Submit"
+          class="border rounded-xl border-2 border-purple-500 my-5 w-full"
+        />
       </form>
     </div>
-  </div>
+  </section>
 );
 
 export default Form;
