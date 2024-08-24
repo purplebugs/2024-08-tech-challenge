@@ -40,6 +40,7 @@ const Form = ({ setTransactions, fetchTransactions }) => (
           </label>
           <input
             required
+            pattern="^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
             data-type="account-id"
             type="text"
             id="account_id"
@@ -54,6 +55,7 @@ const Form = ({ setTransactions, fetchTransactions }) => (
           </label>
           <input
             required
+            pattern="^[[:digit:]]$"
             data-type="amount"
             type="text"
             id="amount"
