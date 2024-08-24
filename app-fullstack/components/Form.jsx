@@ -24,9 +24,9 @@ async function onSubmit(event) {
 }
 
 const Form = ({ setTransactions, fetchTransactions }) => (
-  <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-    <div className="p-6 mt-6 text-left border w-96 rounded-xl">
-      <h3 className="text-2xl font-bold ">Submit new transaction</h3>
+  <section>
+    <h3 className="text-2xl font-bold text-left">Submit new transaction</h3>
+    <div className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-indigo-600 focus:text-indigo-600">
       <form
         id="transactionForm"
         onSubmit={async (event) => {
@@ -55,7 +55,7 @@ const Form = ({ setTransactions, fetchTransactions }) => (
         <input data-type="transaction-submit" type="submit" value="Submit" />
       </form>
     </div>
-  </div>
+  </section>
 );
 
 export default Form;
