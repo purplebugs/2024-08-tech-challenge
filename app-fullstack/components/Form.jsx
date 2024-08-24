@@ -44,7 +44,7 @@ const Form = ({ setTransactions, fetchTransactions }) => (
             type="text"
             id="account_id"
             name="account_id"
-            class="border rounded-xl border-2 border-purple-500 my-5 w-full"
+            className="border rounded-xl border-2 border-purple-500 my-5 w-full"
           />
         </fieldset>
 
@@ -58,7 +58,7 @@ const Form = ({ setTransactions, fetchTransactions }) => (
             type="text"
             id="amount"
             name="amount"
-            class="border rounded-xl border-2 border-purple-500 my-5 w-full"
+            className="border rounded-xl border-2 border-purple-500 my-5 w-full"
           />
         </fieldset>
 
@@ -66,7 +66,7 @@ const Form = ({ setTransactions, fetchTransactions }) => (
           data-type="transaction-submit"
           type="submit"
           value="Submit"
-          class="border rounded-xl border-2 border-purple-500 my-5 w-full"
+          className="border rounded-xl border-2 border-purple-500 my-5 w-full"
         />
       </form>
     </div>
