@@ -11,21 +11,17 @@ export default function Home() {
   const [transactions, setTransactions] = useState(0);
   const [isLoading, setLoading] = useState(true);
 
-  const fetchTransactions = () => {
-    fetch("/api/transactions")
-      .then((res) => res.json())
-      .then((data) => {
-        const latestAccountId = data[0]?.account_id;
+  const fetchTransactions = async () => {
+    const res1 = await fetch("/api/transactions");
+    const data1 = await res1.json();
+    const latestAccountId = data1[0]?.account_id;
 
-        fetch(`/api/accounts/${latestAccountId}`)
-          .then((res) => res.json())
-          .then((dat) => {
-            setBalance(dat.balance);
-          });
+    const res2 = await fetch(`/api/accounts/${latestAccountId}`);
+    const data2 = await res2.json();
+    setBalance(data2.balance);
 
-        setTransactions(data);
-        setLoading(false);
-      });
+    setTransactions(data1);
+    setLoading(false);
   };
 
   useEffect(() => {
