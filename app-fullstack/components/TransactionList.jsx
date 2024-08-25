@@ -27,8 +27,13 @@ function TransactionList({ balance, data, isLoading }) {
             data-balance={balance}
           >
             <p>
-              Transferred ${transaction.amount} to account{" "}
-              {transaction.account_id}
+              {/* TODO extract to function eg readableTransferAmount(integer){check if negative/positive, return "postive amount from/to"} */}
+              Transferred{" "}
+              {transaction.amount > 0
+                ? `${Math.abs(transaction.amount)}
+                 to`
+                : `${Math.abs(transaction.amount)} from`}{" "}
+              account {transaction.account_id}
             </p>
             {index === 0 && <p>The current account balance is $ {balance}</p>}
           </div>
